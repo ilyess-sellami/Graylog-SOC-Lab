@@ -111,7 +111,7 @@ This is the **temporary preflight password** for the first login.
 docker compose restart graylog
 ```
 
-**Log in with `.env` Password:**
+**3.5 Log in with `.env` Password:**
 
 After completing the preflight setup and provisioning Data Node certificates:
 
