@@ -105,3 +105,18 @@ This is the **temporary preflight password** for the first login.
 
 ![Graylog Configuration Successful](/images/graylog_conf_successful.png)
 
+**3.4 Restart Graylog (optional):**
+
+```bash
+docker compose restart graylog
+```
+
+**Log in with `.env` Password:**
+
+After completing the preflight setup and provisioning Data Node certificates:
+
+- Open your browser: `http://localhost:9000`
+- You will see the **Graylog login page**
+- Enter the credentials Username: `admin` and Password: the one you configured in your `.env` file
+
+![Graylog Login Page](/images/graylog_login_page.png)
