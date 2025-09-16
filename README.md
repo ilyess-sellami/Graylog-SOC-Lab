@@ -35,3 +35,46 @@ cd Graylog-SOC-Lab
 This project already contains:
 - `docker-compose.yml`
 - `.env` template
+
+**1.3 Edit the .env file:**
+
+```bash
+nano .env
+```
+
+Set the following values:
+
+```bash
+# A long random secret (>=64 chars). Generate with: pwgen -N 1 -s 96
+GRAYLOG_PASSWORD_SECRET=""
+
+# Root password for web UI (hash of your chosen password).
+GRAYLOG_ROOT_PASSWORD_SHA2=""
+```
+
+💡 Tip: Generate your SHA256 hash using:
+
+```bash
+echo -n "YourPasswordHere" | shasum -a 256
+```
+
+## 2️⃣ Start Graylog Using Docker Compose 🐋
+
+```bash
+docker compose up -d
+```
+
+- Check running containers:
+
+```bash
+docker compose ps
+docker compose logs -f graylog
+```
+
+- You should see a message like:
+
+```bash
+Initial configuration is accessible at 0.0.0.0:9000, with username 'admin' and password 'XXXXXX'
+```
+
+This is the **temporary preflight password** for the first login.
