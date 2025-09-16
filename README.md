@@ -12,13 +12,11 @@ The **Graylog-SOC-Lab** is a **hands-on Security Operations Center (SOC) lab** d
 
 ## 🧩 Components
 
-- **🐳 Docker and Docker Compose**: containerize Graylog, MongoDB, and Elasticsearch for easy deployment and portability.
+- **🐳 Docker and Docker Compose**: containerize Graylog, Graylog-datanode and MongoDB for easy deployment and portability.
 
 - **⚡ Graylog Server**: core log management platform handling ingestion, storage, and dashboards.
 
-- **🔑 Graylog Sidecar Agent**: lightweight log collector installed on servers to manage Beats collectors.
-
-- **📦 Filebeat / Auditbeat**: agents that monitor system, application, and security logs.
+- **📦 Graylog Sidecar Agent**: lightweight log collector installed on servers to manage Beats collectors.
 
 - **🖥️ Ubuntu Server**: acts as a log source sending system, Apache, and custom application logs.
 
@@ -30,7 +28,7 @@ The **Graylog-SOC-Lab** is a **hands-on Security Operations Center (SOC) lab** d
 
 ## 🏗️ Architecture
 
-- 📌 Logs are collected by **Filebeat or Auditbeat** on the Ubuntu Server.
+- 📌 Logs are collected by **Graylog Sidecar Agent** on the Ubuntu Server.
 - 📌 Graylog Sidecar manages these collectors and forwards logs to the Graylog Server via the **Beats input**.
 - 📌 Graylog Server **stores logs**.
 - 📌 The server provides **searching, alerting, and dashboard visualization** for logs.
