@@ -58,7 +58,7 @@ GRAYLOG_ROOT_PASSWORD_SHA2=""
 echo -n "YourPasswordHere" | shasum -a 256
 ```
 
-## 2️⃣ Start Graylog Using Docker Compose 🐋
+### 2️⃣ Start Graylog Using Docker Compose 🐋
 
 **2.1 Run docker compose:**
 
@@ -70,6 +70,11 @@ docker compose up -d
 
 ```bash
 docker compose ps
+```
+
+![Graylog Docker Components](/images/graylog_docker_components.png)
+
+```bash
 docker compose logs -f graylog
 ```
 
@@ -79,4 +84,24 @@ You should see a message like:
 Initial configuration is accessible at 0.0.0.0:9000, with username 'admin' and password 'XXXXXX'
 ```
 
+![Graylog Docker First Time Runed](/images/graylog_first_time.png)
+
 This is the **temporary preflight password** for the first login.
+
+### 3️⃣ Initial Graylog Setup ⚙️
+
+**3.1 Access preflight UI: `http://localhost:9000`**
+
+**3.2 Log in using temporary credentials from Docker logs (username: `admin`, password: `XXXXXX`)**
+
+**3.3 Configure Data Node Certificates:**
+
+- Generate self-signed CA
+- Configure default renewal policy
+- Provision certificates
+- Click **Configuration Finished**
+
+![Graylog Initial Setup](/images/graylog_initial_setup.png)
+
+![Graylog Configuration Successful](/images/graylog_conf_successful.png)
+
