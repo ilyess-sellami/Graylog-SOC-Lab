@@ -125,10 +125,81 @@ After completing the preflight setup and provisioning Data Node certificates:
 
 **4.1 Go to System → Inputs → Select Beats → Launch new input.**
 
+![Graylog Input Beats](/images/graylog_input_beats.png)
+
 **4.2 Configure example settings:**
 
 - **Title:** `Ubuntu Server`
 - **Port:** `5044`
 - **Bind address:** `0.0.0.0`
 
+![Graylog Input Configuration](/images/graylog_input_conf.png)
+
 **4.4 Click Save → Input should show Running**
+
+### 5️⃣ Generate API Token for Sidecar 🔑
+
+**5.1 Go to System → Sidecars in Graylog.**
+
+**5.2 Click Actions → `Create or reuse a token for the graylog-sidecar`.**
+
+![Graylog Sidecars Overview](/images/graylog_sidecars_overview.png)
+
+**5.3 Give it a name (e.g., `Ubuntu Server Token`).**
+
+![Graylog Sidecar Token](/images/graylog_sidecar_token.png)
+
+**5.4 Copy the generated token – you will use this in the Sidecar configuration on your Ubuntu Server.**
+
+```yaml
+server_api_token: "<YOUR_GENERATED_API_TOKEN>"
+```
+
+### 6️⃣ Install Graylog Sidecar Agent on Ubuntu Server
+
+Graylog Sidecar acts as a lightweight collector that forwards logs to your Graylog server.
+
+**6.1 Add Graylog Sidecar repository and install:**
+
+```bash
+wget https://packages.graylog2.org/repo/packages/graylog-sidecar-repository_1-5_all.deb
+sudo dpkg -i graylog-sidecar-repository_1-5_all.deb
+sudo apt-get update
+sudo apt-get install graylog-sidecar
+```
+
+**6.2 Configure the Sidecar:**
+
+```bash
+sudo nano /etc/graylog/sidecar/sidecar.yml
+```
+
+Update at minimum:
+
+```bash
+server_url: "http://<GRAYLOG_SERVER_IP>:9000/api/"
+server_api_token: "<YOUR_GRAYLOG_API_TOKEN>"
+node_name: "ubuntu-server-01"
+```
+
+**6.3 Install and start Sidecar as a system service:**
+
+```bash
+sudo graylog-sidecar -service install
+sudo systemctl enable graylog-sidecar
+sudo systemctl start graylog-sidecar
+sudo systemctl status graylog-sidecar
+```
+
+### 7️⃣ Verify Logs in Graylog Dashboard 🔍
+
+**7.1 Go to System → Sidecars.**
+
+- You should see the Sidecar listed with the name `ubuntu-server-01`.
+- Ensure the status shows **Running** and it is connected to the Graylog server.
+
+![Graylog Sidecar Ubuntu Server](/images/graylog_sidecar_ubuntu_server.png)
+
+**7.2 Go to Search in Graylog.**
+
+You should see incoming logs from your Ubuntu server, such as Apache access and error logs.
