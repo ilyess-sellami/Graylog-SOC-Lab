@@ -28,9 +28,7 @@ A **hands-on SOC lab** using **Graylog Open Source** to **centralize, monitor, a
 
 ---
 
-:
-
-🏗️ Architecture
+## 🏗️ Architecture
 
 - 📌 Logs are collected by **Filebeat or Auditbeat** on the Ubuntu Server.
 - 📌 Graylog Sidecar manages these collectors and forwards logs to the Graylog Server via the **Beats input**.
