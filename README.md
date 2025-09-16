@@ -120,3 +120,15 @@ After completing the preflight setup and provisioning Data Node certificates:
 - Enter the credentials Username: `admin` and Password: the one you configured in your `.env` file
 
 ![Graylog Login Page](/images/graylog_login_page.png)
+
+### 4️⃣ Configure Graylog Inputs ⚡
+
+**4.1 Go to System → Inputs → Select Beats → Launch new input.**
+
+**4.2 Configure example settings:**
+
+- **Title:** `Ubuntu Server`
+- **Port:** `5044`
+- **Bind address:** `0.0.0.0`
+
+**4.4 Click Save → Input should show Running**
