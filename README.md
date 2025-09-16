@@ -1,4 +1,4 @@
-# Graylog SOC Lab
+# Graylog-SOC-Lab
 
 ![Graylog Image](/images/graylog.png)
 
