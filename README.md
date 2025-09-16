@@ -10,6 +10,24 @@ A **hands-on SOC lab** using **Graylog Open Source** to **centralize, monitor, a
 
 ---
 
+## 🧩 Components
+
+- **🐳 Docker and Docker Compose**: containerize Graylog, MongoDB, and Elasticsearch for easy deployment and portability.
+
+- **⚡ Graylog Server**: core log management platform handling ingestion, storage, and dashboards.
+
+- **🔑 Graylog Sidecar Agent**: lightweight log collector installed on servers to manage Beats collectors.
+
+- **📦 Filebeat / Auditbeat**: agents that monitor system, application, and security logs.
+
+- **🖥️ Ubuntu Server**: acts as a log source sending system, Apache, and custom application logs.
+
+- **🌐 Web UI / Dashboard**: visualize logs, configure streams, and manage alerts.
+
+- **🔐 API Tokens**: ensure secure communication between Sidecar agents and the Graylog server.
+
+---
+
 ## 📖 Setup Guide
 
 ### 1️⃣ Docker Installation & Project Setup 🐳
