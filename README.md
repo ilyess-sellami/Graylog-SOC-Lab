@@ -60,18 +60,20 @@ echo -n "YourPasswordHere" | shasum -a 256
 
 ## 2️⃣ Start Graylog Using Docker Compose 🐋
 
+**2.1 Run docker compose:**
+
 ```bash
 docker compose up -d
 ```
 
-- Check running containers:
+**2.2 Check running containers:**
 
 ```bash
 docker compose ps
 docker compose logs -f graylog
 ```
 
-- You should see a message like:
+You should see a message like:
 
 ```bash
 Initial configuration is accessible at 0.0.0.0:9000, with username 'admin' and password 'XXXXXX'
