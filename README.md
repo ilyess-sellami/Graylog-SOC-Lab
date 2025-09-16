@@ -6,7 +6,7 @@
 
 ## 📌 Overview
 
-A **hands-on SOC lab** using **Graylog Open Source** to **centralize, monitor, and analyze logs from multiple sources**. This lab is designed for cybersecurity practice, stream creation, alerting, and dashboard visualization.
+The **Graylog-SOC-Lab** is a **hands-on Security Operations Center (SOC) lab** designed to **centralize, monitor, and analyze logs from multiple sources** using Graylog Open Source. This lab allows cybersecurity practitioners and learners to practice **log collection, stream creation, alerting, and dashboard visualization** in a controlled environment.
 
 ---
 
