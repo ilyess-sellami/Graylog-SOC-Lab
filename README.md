@@ -28,6 +28,18 @@ A **hands-on SOC lab** using **Graylog Open Source** to **centralize, monitor, a
 
 ---
 
+:
+
+🏗️ Architecture
+
+- 📌 Logs are collected by **Filebeat or Auditbeat** on the Ubuntu Server.
+- 📌 Graylog Sidecar manages these collectors and forwards logs to the Graylog Server via the **Beats input**.
+- 📌 Graylog Server **stores logs**.
+- 📌 The server provides **searching, alerting, and dashboard visualization** for logs.
+- 📌 Security analysts **access logs and dashboards** through the Web UI at http://localhost:9000.
+
+---
+
 ## 📖 Setup Guide
 
 ### 1️⃣ Docker Installation & Project Setup 🐳
