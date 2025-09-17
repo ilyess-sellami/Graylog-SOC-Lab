@@ -228,4 +228,18 @@ sudo systemctl status graylog-sidecar
 
 **7.2 Go to Search in Graylog.**
 
-You should see incoming logs from your Ubuntu server, such as Apache access and error logs.
+You should see incoming logs from your Ubuntu server.
+
+---
+
+## 🏁 Conclusion
+
+The **Graylog-SOC-Lab** provides a complete, containerized SOC environment that is both practical and easy to set up.  
+By centralizing and analyzing logs from multiple sources, it allows security analysts and learners to:
+
+- Practice **real-world SOC workflows** such as log collection, stream creation, and alerting.  
+- Gain hands-on experience with **Graylog Open Source** and its integrations.  
+- Build a solid foundation for **incident detection, monitoring, and response** in a controlled lab.  
+
+This project serves as a **training platform** for cybersecurity practitioners and a **reference implementation** for organizations exploring centralized log management with Graylog.
+
